@@ -11,15 +11,16 @@ const ImageGrid = ({ onSelectImg }) => {
     <>
       <motion.div className="img_grid" layout>
         <ImageList
-          sx={{ width: "100vw", height: 450 }}
+          sx={{ width: "90%" }}
           cols={3}
           rowHeight={164}
-          gap={10}
+          gap={15}
           variant="quilted"
         >
           {docs.map((item) => (
             <ImageListItem key={item.id}>
               <img
+                className="images"
                 onClick={() => onSelectImg(item.url)}
                 src={`${item.url}?w=164&h=164&fit=crop&auto=format`}
                 srcSet={`${item.url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}

@@ -24,9 +24,10 @@ const InputPhoto = () => {
             <form>
                 <label>
                     <input type='file' onChange={inputHandler} />
-                    <span>
+                    <span className="input_sign" title="Add file">
                         <AddCircleOutlineIcon
                             fontSize='large'
+                            
                             color='secondary'
                         />
                     </span>
