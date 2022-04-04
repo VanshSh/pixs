@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 
 import ProgressBar from '../ProgressBar/ProgressBar'
 
@@ -23,7 +24,12 @@ const InputPhoto = () => {
             <form>
                 <label>
                     <input type='file' onChange={inputHandler} />
-                    <span className='input_sign'>+</span>
+                    <span>
+                        <AddCircleOutlineIcon
+                            fontSize='large'
+                            color='secondary'
+                        />
+                    </span>
                 </label>
                 <div className='output'>
                     {error && <div className='error'>{error}</div>}
