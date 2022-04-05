@@ -1,25 +1,20 @@
-import InputPhoto from "./Components/Input/Input";
-import Title from "./Components/Title/Title";
-import ImageGrid from "./Components/ImageGrid/ImageGrid";
-import Modal from "./Components/Modal/Modal";
-import { useState } from "react";
 import "./index.css";
+import Home from "./Components/Home/Home";
+import Login from "./Components/Login/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { UserAuthContextProvider } from "./Context/UserAuthContext";
 
 function App() {
-  const [selectedImg, setSelectedImg] = useState(null);
-
-  const selectedImgHandler = (url) => {
-    setSelectedImg(url);
-  };
-
   return (
     <div className="App">
-      <Title />
-      <InputPhoto />
-      <ImageGrid onSelectImg={selectedImgHandler} />
-      {selectedImg && (
-        <Modal url={selectedImg} onSelectImg={selectedImgHandler} />
-      )}
+      <UserAuthContextProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/photos" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </UserAuthContextProvider>
     </div>
   );
 }

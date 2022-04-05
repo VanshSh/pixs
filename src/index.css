@@ -19,8 +19,16 @@ body {
   background: rgb(242, 242, 242);
 }
 
-/*  Title */
+/* Login */
+.login_main {
+  height :100vh;
+  background-color:;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/*  Title */
 .title {
   text-align: center;
   color: var(--light-color);
@@ -80,10 +88,8 @@ label input {
   width: 200px;
   height: 300px;
   object-fit: cover;
-  
+
   filter: blur(1px);
-
-
 }
 
 .images:hover {
@@ -92,7 +98,6 @@ label input {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transform: translateZ(100);
   filter: blur(0px);
-
 }
 
 /* Modal */
