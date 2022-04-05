@@ -21,24 +21,78 @@ body {
 
 /* Login */
 .login_main {
-  height :100vh;
-  background-color:;
+  height: 100vh;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
+}
+
+.login_container {
+  background: #c9d6ff;
+  background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.login_heading {
+  text-align: center;
+  font-size: 3rem;
+  padding: 0 0 2rem 0;
+  margin: 2rem;
+}
+
+.login_btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.google_login:hover,
+.anonymous_login:hover {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.login_google {
+  color: red;
+}
+
+.login_anonymous {
+  color: #fd1d1d;
+}
+
+.google_login,
+.anonymous_login {
+  background-color: white;
+  margin: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.login_google,
+.login_anonymous {
+  font-size: 3rem;
+  font-weight: bolder;
+  margin: 2rem;
 }
 
 /*  Title */
 .title {
   text-align: center;
-  color: var(--light-color);
+  color: var(--brand-color);
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
   padding: 1rem;
-  background: #833ab4;
-  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: #c9d6ff;
+  background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
 
 /* Input */
@@ -50,6 +104,7 @@ form {
 label input {
   height: 0;
   width: 0;
+ 
 }
 
 .output {
@@ -88,16 +143,12 @@ label input {
   width: 200px;
   height: 300px;
   object-fit: cover;
-
-  filter: blur(1px);
 }
 
 .images:hover {
   box-shadow: 0px 1px 1px #cf8bf3;
-  opacity: 1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transform: translateZ(100);
-  filter: blur(0px);
 }
 
 /* Modal */

@@ -6,7 +6,7 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInAnonymously,
-  signInWithPopup
+  signInWithRedirect
 } from "firebase/auth";
 
 // Create Context
@@ -19,7 +19,7 @@ export const UserAuthContextProvider = ({ children }) => {
   // login with google
   const googleSignIn = () => {
     const googleProvider = new GoogleAuthProvider();
-    return signInWithPopup(auth, googleProvider);
+    return signInWithRedirect(auth, googleProvider);
   };
 
   // login with anonymous
