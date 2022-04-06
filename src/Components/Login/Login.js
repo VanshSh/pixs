@@ -28,9 +28,9 @@ const Login = () => {
       setError(err.message);
     }
 
-    console.log("YEs")
-    console.log(error)
+    console.log(error);
   };
+
 
   return (
     <>

@@ -4,15 +4,25 @@ import InputPhoto from "../Input/Input";
 import ImageGrid from "../ImageGrid/ImageGrid";
 import Modal from "../Modal/Modal";
 import { useUserAuth } from "../../Context/UserAuthContext";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [selectedImg, setSelectedImg] = useState(null);
-  const { user, logout } = useUserAuth();
+  const { user, logOut } = useUserAuth();
+  const navigate = useNavigate();
 
   if (user === null) {
     return <Navigate to="/" />;
   }
+
+  const logoutHandler = async () => {
+    try {
+      await logOut();
+      navigate("/");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   const selectedImgHandler = (url) => {
     setSelectedImg(url);
@@ -20,6 +30,7 @@ const Home = () => {
   return (
     <>
       <Title />
+      <h3 className="logout" onClick={logoutHandler}>Logout</h3>
       <InputPhoto />
       <ImageGrid onSelectImg={selectedImgHandler} />
       {selectedImg && (

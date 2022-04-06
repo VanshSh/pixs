@@ -33,7 +33,7 @@ body {
   background: #c9d6ff;
   background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
   background: linear-gradient(to right, #e2e2e2, #c9d6ff);
-  width: 50%;
+  width: 40%;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -73,6 +73,7 @@ body {
   margin: 1rem;
   border-radius: 10px;
   cursor: pointer;
+  
 }
 
 .login_google,
@@ -104,7 +105,6 @@ form {
 label input {
   height: 0;
   width: 0;
- 
 }
 
 .output {
@@ -122,7 +122,7 @@ label input {
 
 /* ProgressBar */
 .progress-bar {
-  height: 10px;
+  height: 2px;
   width: 90%;
   background: #a770ef;
   background: -webkit-linear-gradient(to right, #fdb99b, #cf8bf3, #a770ef);
@@ -167,4 +167,23 @@ label input {
   margin: 60px auto;
   box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
   border: 3px solid white;
+}
+
+/* Home */
+
+.logout {
+  font-size: 1.5rem;
+  float: right;
+  display: block;
+  color: var(--brand-color);
+  background-color: var(--mid-color);
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  margin-right: 1rem;
+}
+
+.logout:hover {
+  background-color: #91b6e4;
+  color:white;
+  cursor: pointer;
 }
