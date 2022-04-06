@@ -1,13 +1,7 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
 import { auth } from "../Components/Firebase/firebase";
 
-import {
-  signOut,
-  onAuthStateChanged,
-  GoogleAuthProvider,
-  signInAnonymously,
-  signInWithRedirect
-} from "firebase/auth";
+import { signOut, onAuthStateChanged, signInAnonymously } from "firebase/auth";
 
 // Create Context
 const userAuthContext = createContext();
@@ -15,12 +9,6 @@ const userAuthContext = createContext();
 //  to wrap the component with the context , children => components
 export const UserAuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
-
-  // login with google
-  const googleSignIn = () => {
-    const googleProvider = new GoogleAuthProvider();
-    return signInWithRedirect(auth, googleProvider);
-  };
 
   // login with anonymous
   const anonymousSignIn = () => {
@@ -48,7 +36,6 @@ export const UserAuthContextProvider = ({ children }) => {
         value={{
           user,
           logOut,
-          googleSignIn,
           anonymousSignIn
         }}
       >

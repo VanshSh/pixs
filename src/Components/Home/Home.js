@@ -11,10 +11,7 @@ const Home = () => {
   const { user, logOut } = useUserAuth();
   const navigate = useNavigate();
 
-  if (user === null) {
-    return <Navigate to="/" />;
-  }
-
+  
   const logoutHandler = async () => {
     try {
       await logOut();
@@ -30,7 +27,9 @@ const Home = () => {
   return (
     <>
       <Title />
-      <h3 className="logout" onClick={logoutHandler}>Logout</h3>
+      <h3 className="logout" onClick={logoutHandler}>
+        Logout
+      </h3>
       <InputPhoto />
       <ImageGrid onSelectImg={selectedImgHandler} />
       {selectedImg && (

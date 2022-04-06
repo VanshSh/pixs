@@ -21,23 +21,21 @@ body {
 
 /* Login */
 .login_main {
-  height: 100vh;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
   font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .login_container {
   background: #c9d6ff;
   background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
   background: linear-gradient(to right, #e2e2e2, #c9d6ff);
-  width: 40%;
+  width: 50%;
   border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .login_heading {
@@ -78,6 +76,12 @@ body {
   font-size: 3rem;
   font-weight: bolder;
   margin: 0.2rem;
+}
+
+.info_msg {
+  text-align: center;
+  width: 50%;
+  margin: 1rem auto;
 }
 
 /*  Title */

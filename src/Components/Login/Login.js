@@ -1,12 +1,10 @@
-import GoogleIcon from "@mui/icons-material/Google";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import { useState } from "react";
 import { useUserAuth } from "../../Context/UserAuthContext";
 import { useNavigate } from "react-router-dom";
+import Alert from "@mui/material/Alert";
 
 const Login = () => {
-  const [error, setError] = useState(null);
-  const { googleSignIn, anonymousSignIn } = useUserAuth();
+  const { anonymousSignIn } = useUserAuth();
   const navigate = useNavigate();
 
   const anonymousSignInHandler = async (e) => {
@@ -15,37 +13,17 @@ const Login = () => {
       await anonymousSignIn();
       navigate("/photos");
     } catch (err) {
-      setError(err.message);
+      console.log(err.message);
     }
   };
-
-  const googleSignInHandler = async (e) => {
-    e.preventDefault();
-    try {
-      await googleSignIn();
-      navigate("/photos");
-    } catch (err) {
-      setError(err.message);
-    }
-
-    console.log(error);
-  };
-
 
   return (
     <>
       <main className="login_main">
         <div className="login_container">
           <h1 className="login_heading"> Pixs</h1>
-          <p>Login using</p>
+          <p>Login as guest</p>
           <div className="login_btns">
-            <div
-              onClick={googleSignInHandler}
-              className="google_login"
-              title="Google"
-            >
-              <GoogleIcon fontSize="large" className="login_google" />
-            </div>
             <div
               onClick={anonymousSignInHandler}
               className="anonymous_login"
@@ -56,6 +34,12 @@ const Login = () => {
           </div>
         </div>
       </main>
+
+      <div className="info_msg">
+        <Alert variant="outlined" severity="info">
+          <h4> Info :- Please do not add personal images.</h4>
+        </Alert>
+      </div>
     </>
   );
 };
